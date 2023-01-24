@@ -69,4 +69,25 @@ public class MenuItem {
     public void setDateAdded() {
         this.dateAdded = new Date();
     }
+
+    // Instance Methods
+
+    //TODO: Test function works
+    @Override
+    public boolean equals(Object toBeCompared) {
+        if (toBeCompared == this) {
+            return false;
+        }
+
+        if (toBeCompared == null) {
+            return false;
+        }
+
+        if (toBeCompared.getClass() != this.getClass()) {
+            return false;
+        }
+
+        MenuItem item = (MenuItem) toBeCompared;
+        return this.getName() == item.getName() && this.getDescription() == item.getDescription();
+    }
 }

@@ -1,8 +1,6 @@
 package org.example;
 
-public class Main {
-    private static MenuItem burger;
-
+public class Restaraunt {
     public static void main(String[] args) {
         // Test Menu
         Menu testMenu = new Menu();
@@ -29,7 +27,24 @@ public class Main {
         // Menu Last Update Date check
         System.out.println(testMenu.getLastUpdateDate());
         System.out.println(testMenu.getMenuItemsHM());
-        //TODO: Log lastUpdateDate, menuItems here:
+
+        // Remove Item from Menu
+        testMenu.removeItem(burger);
+
+        // Test Remove Item, Print Menu, Print Item Worked
+        testMenu.printMenu();
+        testMenu.printItem("Fries");
+
+        // Test isNewItem()
+        MenuItem pancakes = new MenuItem("Pancakes",5.00, "Test description.", "Main Course");
+        testMenu.addItem(pancakes);
+        testMenu.isNewItem("Fries");
+        testMenu.isNewItem("Pancakes");
+
+        // Test MenuItem.equals()
+        MenuItem pancakes2 = new MenuItem("Pancakes",5.00, "Test description.", "Main Course");
+        System.out.println(pancakes.equals(pancakes2));
+
 
     }
 }
